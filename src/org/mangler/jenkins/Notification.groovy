@@ -26,3 +26,9 @@ def notifyBuild(String buildStatus = 'STARTED', channel = '@econnell') {
 
     slackSend (color: colorCode, message: summary, channel: channel)
 }
+
+def rpmBuild() {
+stage('Prep') {
+git branch: 'master', url: 'github.com/econnell/jenkins-notifications.git', poll: false, changelog: false
+}
+}
