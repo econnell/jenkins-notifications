@@ -28,9 +28,11 @@ def notifyBuild(String buildStatus = 'STARTED', channel = '@econnell') {
 }
 
 def rpmBuild() {
-stage('Prep') {
-dir('source') {
-git branch: 'master', url: 'github.com/econnell/jenkins-notifications.git', poll: false, changelog: false
-}
-}
+  node('eva64') {
+    stage('Prep') {
+      dir('source') {
+	git branch: 'master', url: 'github.com/econnell/jenkins-notifications.git', poll: false, changelog: false
+      }
+    }
+  }
 }
