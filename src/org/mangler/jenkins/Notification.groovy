@@ -1,5 +1,8 @@
+#!/usr/bin/groovy
 
-def notifyBuild(String buildStatus = 'STARTED') {
+package org.mangler.jenkins;
+
+def notifyBuild(String buildStatus = 'STARTED', channel = '@econnell') {
     // build status of null means successful
     buildStatus =  buildStatus ?: 'SUCCESSFUL'
 
@@ -21,6 +24,6 @@ def notifyBuild(String buildStatus = 'STARTED') {
             colorCode = '#FF0000'
     }
 
-    slackSend (color: colorCode, message: summary)
+    slackSend (color: colorCode, message: summary, channel: channel)
 }
 
