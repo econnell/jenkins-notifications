@@ -31,7 +31,7 @@ def rpmBuild() {
   node('eva64') {
     stage('Prep') {
       dir('source') {
-	git branch: 'master', url: 'github.com/econnell/jenkins-notifications.git', poll: false, changelog: false
+	git branch: 'master', url: 'https://github.com/econnell/jenkins-notifications.git', poll: false, changelog: false
       }
     }
   }
