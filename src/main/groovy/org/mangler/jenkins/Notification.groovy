@@ -2,7 +2,7 @@
 
 package org.mangler.jenkins;
 
-class Notify {
+class Notification {
 	def notifyBuild(String buildStatus = 'STARTED', channel = '@econnell') {
 	    // build status of null means successful
 	    buildStatus =  buildStatus ?: 'SUCCESSFUL'
